@@ -19,6 +19,53 @@ In gradle-wrapper.properties
 
 `distributionUrl=https\://services.gradle.org/distributions/gradle-4.4-all.zip `
 
-### Follow Steps
 
-1. go to https://spring.io/guides/gs/spring-boot/
+### Set up a Spring project
+
+go to https://spring.io/guides/gs/spring-boot/
+
+### Servlet Learning
+
+#### java servlet
+
+https://www.baeldung.com/intro-to-servlets 
+
+Simply put, a Servlet is a class that handles requests, processes them and reply back with a response.
+
+Servlets are under the control of another Java application called a Servlet Container. When an application running in a web server receives a request, the Server hands the request to the Servlet Container – which in turn passes it to the target Servlet.
+
+Servlet Lifecycle
+
+1. init()
+The init method is designed to be called only once. If an instance of the servlet does not exist, the web container:
+
+	Loads the servlet class
+	Creates an instance of the servlet class
+	Initializes it by calling the init method
+	
+2. service()
+
+This method is only called after the servlet’s init() method has completed successfully.
+
+The Container calls the service() method to handle requests coming from the client, interprets the HTTP request type (GET, POST, PUT, DELETE, etc.) and calls doGet, doPost, doPut, doDelete, etc. methods as appropriate
+
+3. destroy()
+Called by the Servlet Container to take the Servlet out of service.
+
+Example Servlet Code
+ 
+https://github.com/eugenp/tutorials/tree/master/javax-servlets/src/main/java/com/baeldung
+
+
+#### Spring Servlet
+
+https://www.baeldung.com/spring-xml-vs-java-config (https://github.com/eugenp/tutorials/tree/master/spring-mvc-java)
+
+https://www.baeldung.com/register-servlet
+
+1. Why webapplicationInitializer not loading 
+https://github.com/spring-projects/spring-boot/issues/522
+
+https://docs.spring.io/spring/docs/4.3.12.RELEASE/spring-framework-reference/htmlsingle/
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#spring-web
