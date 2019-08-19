@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -14,16 +15,12 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.example.controller", "com.example.config"})
 //@SpringBootApplication = @Configuration+  @ComponentScan + @EnableAutoConfiguration
-//@Configuration
-//@ComponentScan
-//@EnableAutoConfiguration
 public class DemoApplication {
 
 	public static void main(String[] args) {
-//        SpringApplication.run(DemoApplication.class,args);
-	    SpringApplication.run(new Class[] {DemoApplication.class,WebAppInitializer.class}, args);
-
+        SpringApplication.run(DemoApplication.class,args);
 	}
 
 	//Print all the beans in name order

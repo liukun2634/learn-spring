@@ -14,5 +14,8 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.apache.logging.log4j:log4j:2.3'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }

@@ -1,5 +1,7 @@
 package com.example.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
@@ -11,22 +13,47 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 @Configuration
-//Change from WebApplicationInitializer to SevletContextInitializer for Spring boot to discovery
-public class WebAppInitializer implements ServletContextInitializer {
+//WebApplicationInitializer will be discovered and bootstrapped by Spring boot
+//ServletContextInitializer hence servlet will not be automatically bootstrapped by the Servlet container
+public class WebAppInitializer implements WebApplicationInitializer {
+
+
+    private static final Logger logger = LoggerFactory.getLogger(WebAppInitializer.class);
 
     @Override
     public void onStartup(ServletContext container) throws ServletException {
+        //Init WebApplicationContext
         AnnotationConfigWebApplicationContext ctx
                 = new AnnotationConfigWebApplicationContext();
         ctx.register(WebMvcConfigure.class);
         ctx.setServletContext(container);
 
-        System.out.println("------------------------------------");
-        System.out.print("Loading dispatcher");
-        //Init dispatherServlet with WebApplicationContext
+        logger.info("------------------------------------");
+        logger.info("Loading dispatcher Servlet");
+
+        //Configure Servlet with WebApplicationContext
         ServletRegistration.Dynamic servlet = container.addServlet(
-                "dispatcherExample", new DispatcherServlet(ctx));
+                "dispatcherServlet", new DispatcherServlet(ctx));
+        //LoadOnStartUp indicates an order for servlets to be loaded, servlets with higher numbers get loaded after servlets with lower numbers.
         servlet.setLoadOnStartup(1);
+        //Servlet mapping pattern
         servlet.addMapping("/");
+
+
+        /*************Test Add new Servlet ***********************/
+
+//        ServletRegistration.Dynamic servlet2 = container.addServlet(
+//                "dispatcherServlet2", new DispatcherServlet(ctx));
+//        servlet2.setLoadOnStartup(2);
+//        servlet2.addMapping("/path/*");
+//
+//        ServletRegistration.Dynamic servlet3 = container.addServlet(
+//                "dispatcherServlet3", new DispatcherServlet(ctx));
+//        servlet3.setLoadOnStartup(3);
+//        servlet3.addMapping("/path");
+
+
+        logger.info("Finished dispatcher Servlet");
+        logger.info("------------------------------------");
     }
 }

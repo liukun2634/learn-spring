@@ -63,9 +63,35 @@ https://www.baeldung.com/spring-xml-vs-java-config (https://github.com/eugenp/tu
 
 https://www.baeldung.com/register-servlet
 
-1. Why webapplicationInitializer not loading 
-https://github.com/spring-projects/spring-boot/issues/522
-
 https://docs.spring.io/spring/docs/4.3.12.RELEASE/spring-framework-reference/htmlsingle/
 
 https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#spring-web
+
+#### Spring Servlet Source Code
+
+DispatcherServlet (get Bean and init all resolver and handler with bean)
+
+
+extend FrameworkServlet (Set WebApplicationContext and set context attribute)
+
+
+extend HttpServletBean
+
+
+extend HttpServlet
+
+
+#### Try to play with Serlvet
+
+Why webapplicationInitializer not loading 
+https://github.com/spring-projects/spring-boot/issues/522
+https://github.com/dickerpulli/playground/tree/master/web/spring-boot/src/main/resources
+Register second Servlet
+https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
+->Embed Spring servlet was lazy initialized 
+->Customized Servlet not(Use ServletContextInitializer) -> not work for dispaterSerlvet, for your defined servlet?
+
+Add more Serlvet
+https://stackoverflow.com/questions/15385596/how-are-servlet-url-mappings-in-web-xml-used
+
+
