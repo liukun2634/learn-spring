@@ -39,7 +39,6 @@ public class WebAppInitializer implements WebApplicationInitializer {
         //Servlet mapping pattern
         servlet.addMapping("/");
 
-
         /*************Test Add new Servlet ***********************/
 
 //        ServletRegistration.Dynamic servlet2 = container.addServlet(
