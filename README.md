@@ -83,18 +83,20 @@ extend HttpServlet
 
 #### Try to play with Serlvet
 
-Why webapplicationInitializer not loading -> must not use embeded tomcat
+If run in intellij, it will default start a embbed tomcat. And if spring boot found mvc in dependency then it will load dispatcherServelt.
+
+Embeded Spring dispatherServlet was lazy initialized. Only when call the  url, then it will initialized it.
+
+Why WebapplicationInitializer can not be loaded -> must use local tomcat server
 https://github.com/spring-projects/spring-boot/issues/522
-https://github.com/dickerpulli/playground/tree/master/web/spring-boot/src/main/resources
 
-Register second Servlet
-https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
+Set local tomcat server
+https://www.mkyong.com/intellij/intellij-idea-run-debug-web-application-on-tomcat/
+https://tomcat.apache.org/download-80.cgi (download tomcat)
+https://www.baeldung.com/register-servlet (Register Servlet by WebApplicationInitializer)
 
-->Embed Spring servlet was lazy initialized 
-
-->Customized Servlet not(Use ServletContextInitializer) -> not work for dispaterSerlvet-> work fine for your defined serlet
-
-Add more Serlvet
+ Use ServletContextInitializer as configuration component to add custom Servlet (Work with JSP Web)
 https://stackoverflow.com/questions/15385596/how-are-servlet-url-mappings-in-web-xml-used
+https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
 
 
