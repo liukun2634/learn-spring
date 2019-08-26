@@ -12,7 +12,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-@Configuration
+//@Configuration
 public class ServletInitializer implements ServletContextInitializer {
     private static final Logger logger = LoggerFactory.getLogger(WebAppInitializer.class);
 

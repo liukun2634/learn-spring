@@ -12,8 +12,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-@Configuration
-//WebApplicationInitializer will be discovered and bootstrapped by Spring boot
+//WebApplicationInitializer will be discovered and bootstrapped by Spring boot(Not work in embeded tomcat, set local tomcat for application)
 //ServletContextInitializer hence servlet will not be automatically bootstrapped by the Servlet container
 public class WebAppInitializer implements WebApplicationInitializer {
 

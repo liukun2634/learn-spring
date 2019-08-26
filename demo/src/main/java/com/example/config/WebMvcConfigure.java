@@ -12,7 +12,6 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@EnableWebMvc
 public class WebMvcConfigure implements WebMvcConfigurer {
 
     @Bean

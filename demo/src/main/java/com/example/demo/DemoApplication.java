@@ -7,10 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.example.controller", "com.example.config"})
 //@SpringBootApplication = @Configuration+  @ComponentScan + @EnableAutoConfiguration
-public class DispatcherServletApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-        SpringApplication.run(DispatcherServletApplication.class,args);
+		SpringApplication.run(DemoApplication.class,args);
 	}
 
 	//Print all the beans in name order

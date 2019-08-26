@@ -83,13 +83,16 @@ extend HttpServlet
 
 #### Try to play with Serlvet
 
-Why webapplicationInitializer not loading 
+Why webapplicationInitializer not loading -> must not use embeded tomcat
 https://github.com/spring-projects/spring-boot/issues/522
 https://github.com/dickerpulli/playground/tree/master/web/spring-boot/src/main/resources
+
 Register second Servlet
 https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
+
 ->Embed Spring servlet was lazy initialized 
-->Customized Servlet not(Use ServletContextInitializer) -> not work for dispaterSerlvet, for your defined servlet?
+
+->Customized Servlet not(Use ServletContextInitializer) -> not work for dispaterSerlvet-> work fine for your defined serlet
 
 Add more Serlvet
 https://stackoverflow.com/questions/15385596/how-are-servlet-url-mappings-in-web-xml-used
