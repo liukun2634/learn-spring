@@ -28,7 +28,7 @@
     <!-- ensure that the above transactional advice runs for any execution
     of an operation defined by the FooService interface -->
     <aop:config>
-        <aop:pointcut id="fooServiceOperation" expression="execution(* learn.transaction.DefaultFooService.*(..))"/>
+        <aop:pointcut id="fooServiceOperation" expression="execution(* learn.transaction.FooService.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
     </aop:config>
 
@@ -36,8 +36,6 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.h2.Driver"/>
         <property name="url" value="jdbc:h2:mem:myDb"/>
-        <!--<property name="username" value="scott"/>-->
-        <!--<property name="password" value="tiger"/>-->
     </bean>
 
     <!-- similarly, don't forget the PlatformTransactionManager -->
