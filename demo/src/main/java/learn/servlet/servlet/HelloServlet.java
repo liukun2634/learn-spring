@@ -1,6 +1,5 @@
-package com.example.servlet;
+package learn.servlet.servlet;
 
-import com.example.config.WebAppInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

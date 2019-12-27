@@ -1,12 +1,10 @@
-package com.example.config;
+package learn.servlet.config;
 
-import com.example.servlet.HelloServlet;
-import com.example.servlet.LoginServlet;
+import learn.servlet.servlet.HelloServlet;
+import learn.servlet.servlet.LoginServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

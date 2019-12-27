@@ -99,4 +99,40 @@ https://www.baeldung.com/register-servlet (Register Servlet by WebApplicationIni
 https://stackoverflow.com/questions/15385596/how-are-servlet-url-mappings-in-web-xml-used
 https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
 
+###  Transaction Learning
 
+Wiki:
+https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/transaction.html
+
+Concept:
+https://blog.csdn.net/baidu_37107022/article/details/75578140
+https://blog.csdn.net/dream_broken/article/details/72845928
+
+
+Problems
+
+1. context.xml dependency
+
+Add in dependency in gradle file
+```
+compile 'org.springframework:spring-tx:5.0.2.RELEASE'
+compile 'org.springframework.data:spring-data-jpa:1.11.1.RELEASE'
+```
+
+Reference: https://stackoverflow.com/questions/47616570/spring-tx-unable-to-locate-spring-namespacehandler-for-xml-schema-namespace-ht
+
+2. Set ClassPathXmlApplicationContext
+Why use /transaction/context.xml: 
+https://stackoverflow.com/questions/12893760/spring-cannot-find-bean-xml-configuration-file-when-it-does-exist
+
+3. Set h2 database
+https://www.baeldung.com/spring-testing-separate-data-source
+https://www.baeldung.com/spring-jpa-test-in-memory-database
+
+4. java.lang.ClassNotFoundException
+```
+compile 'org.aspectj:aspectjweaver:1.7.4'
+```
+
+ org.aspectj.weaver.reflect.ReflectionWorld$ReflectionWorldException
+https://stackoverflow.com/questions/20226558/spring-transaction-management-cannot-resolve-reference-to-bean-transactionmana
