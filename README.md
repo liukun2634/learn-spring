@@ -24,7 +24,9 @@ In gradle-wrapper.properties
 
 go to https://spring.io/guides/gs/spring-boot/
 
-### Servlet Learning
+
+
+### Learn Servlet
 
 #### java servlet
 
@@ -53,7 +55,7 @@ The Container calls the service() method to handle requests coming from the clie
 Called by the Servlet Container to take the Servlet out of service.
 
 Example Servlet Code
- 
+
 https://github.com/eugenp/tutorials/tree/master/javax-servlets/src/main/java/com/baeldung
 
 
@@ -99,15 +101,65 @@ https://www.baeldung.com/register-servlet (Register Servlet by WebApplicationIni
 https://stackoverflow.com/questions/15385596/how-are-servlet-url-mappings-in-web-xml-used
 https://stackoverflow.com/questions/20915528/how-can-i-register-a-secondary-servlet-with-spring-boot
 
-###  Transaction Learning
 
-Wiki:
-https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/transaction.html
 
-Concept:
-https://blog.csdn.net/baidu_37107022/article/details/75578140
-https://blog.csdn.net/dream_broken/article/details/72845928
+###  Learn Transaction
 
+#### Java Transaction
+
+Reference: https://docs.oracle.com/javase/tutorial/jdbc/basics/transactions.html
+
+####  Java Transaction API (JTA)
+
+**The Java Transaction API** allows applications to perform distributed transactions, that is, transactions that access and update data on two or more networked computer resources.
+
+**A transaction** defines a logical unit of work that either completely succeeds or produces no result at all.
+
+Reference: https://www.progress.com/tutorials/jdbc/understanding-jta
+
+##### The Simplest Case: Application to Database Local Transactions
+
+![img](https://d117h1jjiq768j.cloudfront.net/images/default-source/default-album/tutorialimages-album/odbc-album/jta1.gif?sfvrsn=0)
+
+##### Application Servers
+
+![img](https://d117h1jjiq768j.cloudfront.net/images/default-source/default-album/tutorialimages-album/odbc-album/jta2.gif?sfvrsn=0)
+
+##### Distributed Transactions and the Transaction Manager
+
+1 - UserTransaction, 2 - Transaction Manager, 3 - XAResource
+
+![img](https://d117h1jjiq768j.cloudfront.net/images/default-source/default-album/tutorialimages-album/odbc-album/jta3.gif?sfvrsn=0)
+
+Two-Phase Commit Protocol.
+
+In the first phase, the transaction manager polls all of the resource managers (RDBMSs) involved in the distributed transaction to see if each one is ready to commit. If a resource manager cannot commit, it responds negatively and rolls back its particular part of the transaction so that data is not altered.
+
+In the second phase, the transaction manager determines if any of the resource managers have responded negatively, and, if so, rolls back the whole transaction. If there are no negative responses, the translation manager commits the whole transaction, and returns the results to the application.
+
+**Related technologies** - JDBC, Hibernate 
+
+
+
+#### Java Persistence API (**JPA**)
+
+Wiki: https://en.wikipedia.org/wiki/Java_Persistence_API
+
+In 2019 renamed to Jakarta Persistence, is a Java application programming interface specification that describes the management of relational data in applications using Java Platform, Standard Edition and Java Platform, Enterprise Edition/Jakarta EE.
+
+**Entities** - A persistence entity is a lightweight Java class whose state is typically persisted to a table in a relational database. 
+
+**Related technologies** - Enterprise JavaBeans(EJB), Java Data Objects(JDO), Hibernate, Spring Data JPA
+
+
+
+#### Spring Transaction
+
+Basic Concept: https://www.tutorialspoint.com/spring/spring_transaction_management.htm
+
+Official wiki: https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/transaction.html
+
+transaction propagation: https://blog.csdn.net/dream_broken/article/details/72845928
 
 Problems
 
