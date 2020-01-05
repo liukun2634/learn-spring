@@ -155,13 +155,25 @@ In 2019 renamed to Jakarta Persistence, is a Java application programming interf
 
 #### Spring Transaction
 
+**Reference**
+
+Back ground https://blog.csdn.net/weixin_37934748/article/details/82774230
+
 Basic Concept: https://www.tutorialspoint.com/spring/spring_transaction_management.htm
 
 Official wiki: https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/transaction.html
 
 transaction propagation: https://blog.csdn.net/dream_broken/article/details/72845928
 
-Problems
+
+
+**Spring Transaction API**
+
+![img](https://img-blog.csdn.net/20180919164820400?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzkzNDc0OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+
+
+**Problems**
 
 1. context.xml dependency
 
