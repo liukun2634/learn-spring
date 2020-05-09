@@ -1,2 +1,2 @@
 #To enable github to check demo folder
-demo/* -linguist-vendored
+demo/* linguist-vendored=false
